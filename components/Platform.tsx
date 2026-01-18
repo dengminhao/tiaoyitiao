@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import * as THREE from 'three';
 import { PlatformData, ShapeType } from '../types';
 
 interface PlatformProps {

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { OrthographicCamera, Environment, SoftShadows } from '@react-three/drei';
+import { OrthographicCamera, Environment } from '@react-three/drei';
 import * as THREE from 'three';
 import { 
   GameState, 
@@ -14,7 +14,6 @@ import {
   PLATFORM_BASE_SIZE,
   JUMP_SPEED_MULTIPLIER,
   PLATFORM_HEIGHT,
-  PLAYER_SIZE,
   GRAVITY,
   HORIZONTAL_SPEED
 } from '../constants';
@@ -179,7 +178,7 @@ const GameLogic: React.FC<GameSceneProps> = ({ gameState, onScore, onGameOver })
 
 
   // Game Loop
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (gameState !== GameState.PLAYING) return;
 
     // Charging Animation

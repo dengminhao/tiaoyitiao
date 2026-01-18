@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import GameScene from './components/GameScene';
-import { GameState, GameStore } from './types';
+import { GameState } from './types';
 
 const App: React.FC = () => {
   const [gameState, setGameState] = useState<GameState>(GameState.MENU);

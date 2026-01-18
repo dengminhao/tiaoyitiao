@@ -1,7 +1,7 @@
-import React, { useRef, useLayoutEffect, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { PLAYER_COLOR, PLAYER_SIZE } from '../constants';
+import { PLAYER_COLOR } from '../constants';
 
 interface PlayerProps {
   position: THREE.Vector3;
@@ -16,7 +16,7 @@ const Player: React.FC<PlayerProps> = ({ position, isCharging, chargeLevel, look
   const headRef = useRef<THREE.Mesh>(null);
 
   // Smooth visual position interpolation
-  useFrame((state, delta) => {
+  useFrame(() => {
     if (groupRef.current) {
       // Lerp the actual group position to the physics position
       groupRef.current.position.lerp(position, 0.2);
